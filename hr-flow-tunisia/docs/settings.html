@@ -1,0 +1,136 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Settings — HR Flow Tunisia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+  <div class="app-shell">
+    <div id="sidebar-mount"></div>
+
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <h1>Settings</h1>
+          <div class="sub">Company details, work rules and subscription</div>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="card" style="max-width:640px;">
+          <h3 style="margin-top:0;">Company profile</h3>
+          <form id="company-form">
+            <div class="field">
+              <label for="company-name">Company name</label>
+              <input type="text" id="company-name" required />
+            </div>
+            <div class="field">
+              <label for="industry">Industry</label>
+              <select id="industry">
+                <option>Retail & Commerce</option>
+                <option>Manufacturing</option>
+                <option>Textiles</option>
+                <option>Construction & BTP</option>
+                <option>Technology & IT</option>
+                <option>Hospitality & Tourism</option>
+                <option>Agriculture</option>
+                <option>Healthcare</option>
+                <option>Other Services</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="save-company-btn">Save company profile</button>
+          </form>
+        </div>
+
+        <div class="card" style="max-width:640px; margin-top:20px;">
+          <h3 style="margin-top:0;">Work rules</h3>
+          <p class="text-muted" style="font-size:12.5px; margin-top:-6px;">Used to detect late check-ins and calculate payroll deductions.</p>
+          <form id="rules-form">
+            <div class="form-row-2">
+              <div class="field">
+                <label for="work-start">Work day starts at</label>
+                <input type="time" id="work-start" required />
+              </div>
+              <div class="field">
+                <label for="grace-minutes">Grace period (minutes)</label>
+                <input type="number" id="grace-minutes" min="0" step="1" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="late-penalty">Late-day penalty (fraction of daily rate)</label>
+              <input type="number" id="late-penalty" min="0" max="1" step="0.05" required />
+              <div class="field-hint">e.g. 0.5 means a late day costs half a day's pay.</div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="save-rules-btn">Save work rules</button>
+          </form>
+        </div>
+
+        <div class="section-title">Subscription plan</div>
+        <div class="plan-grid">
+          <div class="card plan-card" id="plan-free">
+            <h3>Free</h3>
+            <div class="plan-price">0 TND<span>/month</span></div>
+            <ul><li>Up to 3 employees</li><li>Attendance only</li><li>No payroll or reports</li><li>Community support</li></ul>
+            <button class="btn btn-ghost btn-block plan-select-btn" data-plan="free" style="margin-top:14px;">Choose Free</button>
+          </div>
+          <div class="card plan-card" id="plan-basic">
+            <h3>Basic</h3>
+            <div class="plan-price">120 TND<span>/month</span></div>
+            <ul><li>Up to 15 employees</li><li>Attendance &amp; payroll</li><li>Email support</li></ul>
+            <button class="btn btn-ghost btn-block plan-select-btn" data-plan="basic" style="margin-top:14px;">Choose Basic</button>
+          </div>
+          <div class="card plan-card" id="plan-pro">
+            <span class="plan-tag">Popular</span>
+            <h3>Pro</h3>
+            <div class="plan-price">250 TND<span>/month</span></div>
+            <ul><li>Up to 60 employees</li><li>Reports &amp; exports</li><li>Priority support</li></ul>
+            <button class="btn btn-ghost btn-block plan-select-btn" data-plan="pro" style="margin-top:14px;">Choose Pro</button>
+          </div>
+          <div class="card plan-card" id="plan-enterprise">
+            <h3>Enterprise</h3>
+            <div class="plan-price">Custom</div>
+            <ul><li>Unlimited employees</li><li>Multi-branch support</li><li>Dedicated account manager</li></ul>
+            <button class="btn btn-ghost btn-block plan-select-btn" data-plan="enterprise" style="margin-top:14px;">Contact us</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Upgrade request modal (placeholder — no real payment yet) -->
+  <div class="modal-backdrop" id="upgrade-modal">
+    <div class="modal">
+      <h2 id="upgrade-modal-title">Request upgrade</h2>
+      <p class="modal-sub">Leave your details and we'll reach out to set up payment and activate your plan.</p>
+      <form id="upgrade-form">
+        <div class="field">
+          <label for="upgrade-name">Your name</label>
+          <input type="text" id="upgrade-name" required placeholder="e.g. Aziz Ben Mansour" />
+        </div>
+        <div class="field">
+          <label for="upgrade-phone">Phone number</label>
+          <input type="tel" id="upgrade-phone" required placeholder="e.g. 20 123 456" />
+        </div>
+        <div class="field">
+          <label for="upgrade-email">Email</label>
+          <input type="email" id="upgrade-email" required placeholder="you@company.tn" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="cancel-upgrade-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submit-upgrade-btn">Request upgrade</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/settings.js"></script>
+  </body>
+  </html>

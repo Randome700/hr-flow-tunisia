@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Reports — HR Flow Tunisia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-mount"></div>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Reports</h1>
+        <div class="sub">Attendance, performance and salary overview</div>
+      </div>
+      <div class="topbar-actions">
+        <input type="month" id="month-picker" class="search-input" />
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="grid grid-4">
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-success"></span>Present days</div>
+          <div class="stat-value" id="stat-present-days"><div class="skeleton skeleton-stat-value"></div></div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-warning"></span>Late days</div>
+          <div class="stat-value" id="stat-late-days"><div class="skeleton skeleton-stat-value"></div></div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-danger"></span>Absent days</div>
+          <div class="stat-value" id="stat-absent-days"><div class="skeleton skeleton-stat-value"></div></div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-primary"></span>Avg. attendance rate</div>
+          <div class="stat-value" id="stat-avg-rate"><div class="skeleton skeleton-stat-value"></div></div>
+        </div>
+      </div>
+
+      <div class="section-title">Employee attendance rate</div>
+      <div class="table-wrap">
+        <table class="stack-mobile">
+          <thead><tr><th>Employee</th><th>Present</th><th>Late</th><th>Absent</th><th>Rate</th></tr></thead>
+          <tbody id="performance-body">
+            <tr><td colspan="5" style="padding:0;">
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div><div class="skeleton skeleton-text w-10"></div></div>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-title">Salary overview</div>
+      <div class="table-wrap">
+        <table class="stack-mobile">
+          <thead><tr><th>Employee</th><th>Base</th><th>Deductions</th><th>Bonus</th><th>Final</th></tr></thead>
+          <tbody id="salary-body">
+            <tr><td colspan="5" style="padding:0;">
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/reports.js"></script>
+</body>
+</html>

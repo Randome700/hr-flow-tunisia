@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Attendance — HR Flow Tunisia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-mount"></div>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Attendance</h1>
+        <div class="sub">Kiosk check-in and daily attendance log</div>
+      </div>
+      <div class="topbar-actions">
+        <input type="date" id="date-picker" class="search-input" />
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="card checkin-card">
+        <div>
+          <div class="stat-label" style="margin-bottom:8px;">Quick check-in / check-out</div>
+          <div class="flex gap-10">
+            <select id="kiosk-employee" class="search-input" style="min-width:220px;"></select>
+            <button class="btn btn-primary" id="kiosk-checkin">Check in</button>
+            <button class="btn btn-ghost" id="kiosk-checkout">Check out</button>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div class="checkin-time" id="clock">--:--</div>
+          <div class="checkin-status">Company hours start at <strong id="work-start-label">08:30</strong></div>
+        </div>
+      </div>
+
+      <div class="section-title">Attendance for <span id="selected-date-label"></span></div>
+      <div class="table-wrap">
+        <table class="stack-mobile">
+          <thead>
+            <tr><th>Employee</th><th>Status</th><th>Check-in</th><th>Check-out</th><th></th></tr>
+          </thead>
+          <tbody id="attendance-body">
+            <tr><td colspan="5" style="padding:0;">
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/attendance.js"></script>
+</body>
+</html>

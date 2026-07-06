@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Dashboard — HR Flow Tunisia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-mount"></div>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Dashboard</h1>
+        <div class="sub" id="today-label"></div>
+      </div>
+      <div class="topbar-actions">
+        <span class="badge badge-muted" id="trial-badge" style="display:none;"></span>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="grid grid-4" id="stats-grid">
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-primary"></span>Total employees</div>
+          <div class="stat-value" id="stat-total"><div class="skeleton skeleton-stat-value"></div></div>
+          <div class="stat-foot">Active on your team</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-success"></span>Present today</div>
+          <div class="stat-value" id="stat-present"><div class="skeleton skeleton-stat-value"></div></div>
+          <div class="stat-foot" id="present-foot">checked in / marked present</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-danger"></span>Absent today</div>
+          <div class="stat-value" id="stat-absent"><div class="skeleton skeleton-stat-value"></div></div>
+          <div class="stat-foot">no attendance record found</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-warning"></span>Payroll this month</div>
+          <div class="stat-value" id="stat-payroll"><div class="skeleton skeleton-stat-value"></div></div>
+          <div class="stat-foot" id="payroll-foot">total net salaries</div>
+        </div>
+      </div>
+
+      <div class="section-title">Quick actions</div>
+      <div class="quick-actions">
+        <a class="quick-action" href="employees.html">➕ Add employee</a>
+        <a class="quick-action" href="attendance.html">🕒 Mark attendance</a>
+        <a class="quick-action" href="payroll.html">💳 Run payroll</a>
+        <a class="quick-action" href="reports.html">📊 View reports</a>
+      </div>
+
+      <div class="section-title">Today's attendance<a href="attendance.html" style="font-size:12.5px; color:var(--primary); font-weight:600;">See all →</a></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Employee</th><th>Position</th><th>Status</th><th>Check-in</th></tr>
+          </thead>
+          <tbody id="today-table-body">
+            <tr><td colspan="4" style="padding:0;">
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-20"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-20"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+              <div class="skeleton-row"><div class="skeleton skeleton-text w-30"></div><div class="skeleton skeleton-text w-20"></div><div class="skeleton skeleton-text w-15"></div><div class="skeleton skeleton-text w-15"></div></div>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

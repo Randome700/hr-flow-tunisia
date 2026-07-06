@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Log in — HR Flow Tunisia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">HR Flow<small>Tunisia</small></div>
+    </div>
+    <h1>Welcome back</h1>
+    <p class="auth-sub">Log in to your company workspace.</p>
+
+    <div class="auth-error" id="login-error"></div>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="email">Work email</label>
+        <input type="email" id="email" required autocomplete="username" placeholder="you@company.tn" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" required autocomplete="current-password" placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="login-btn">Log in</button>
+    </form>
+
+    <p class="auth-foot">No account yet? <a href="signup.html" style="color:var(--primary); font-weight:600;">Create your company</a></p>
+  </div>
+</div>
+
+<script type="module" src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Payroll — HR Flow Tunisia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  @media print {
+    .sidebar, .sidebar-toggle, .topbar-actions, .table-toolbar, .save-row-btn, .no-print { display: none !important; }
+    .main { margin-left: 0 !important; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+  <div id="sidebar-mount"></div>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Payroll</h1>
+        <div class="sub">Base salary − absences − lateness + bonuses</div>
+      </div>
+      <div class="topbar-actions">
+        <input type="month" id="month-picker" class="search-input" />
+        <button class="btn btn-ghost" id="print-btn">🖨 Print / Export</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="grid grid-2" style="margin-bottom:20px;">
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-warning"></span>Total payroll — <span id="month-label"></span></div>
+          <div class="stat-value" id="total-payroll">—</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label"><span class="dot dot-primary"></span>Employees included</div>
+          <div class="stat-value" id="total-count">—</div>
+        </div>
+      </div>
+
+      <div class="flex gap-10 no-print" style="margin-bottom:14px;">
+        <button class="btn btn-primary" id="generate-btn">⚙️ Generate payroll for this month</button>
+        <span class="text-muted" style="font-size:12.5px;">Recalculates absences &amp; lateness from attendance records. Existing bonuses/notes for this month are kept.</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="stack-mobile">
+          <thead>
+            <tr>
+              <th>Employee</th><th>Base</th><th>Absent days</th><th>Late days</th>
+              <th>Deductions</th><th>Bonus</th><th>Final salary</th><th class="no-print"></th>
+            </tr>
+          </thead>
+          <tbody id="payroll-body">
+            <tr><td colspan="8"><div class="empty-state">Pick a month and click "Generate payroll".</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/payroll.js"></script>
+</body>
+</html>
